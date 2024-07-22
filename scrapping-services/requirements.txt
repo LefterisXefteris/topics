@@ -4,3 +4,4 @@ beautifulsoup4
 apscheduler
 sqlalchemy
 psycopg2-binary
+html5lib

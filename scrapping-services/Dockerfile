@@ -1,17 +1,16 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9
+FROM python:3.9-slim
 
-# Set the working directory
-WORKDIR /app
 
-# Copy the requirements file into the container
+WORKDIR /scrapping-services
+
+
 COPY requirements.txt .
 
-# Install the required dependencies
-RUN pip install -r requirements.txt
 
-# Copy the rest of the application code
+RUN pip install --no-cache-dir -r requirements.txt
+
+
 COPY . .
 
-# Specify the command to run on container start
-CMD ["python", "app.py"]
+
+CMD ["python", "scraper.py"]
